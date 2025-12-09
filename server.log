@@ -1,0 +1,226 @@
+nohup: ignoring input
+
+> brotherhood-2035@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.25
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 3.3s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 618ms (72 modules)
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ ○ Compiling / ...
+ ✓ Compiled / in 13.4s (1555 modules)
+ GET / 200 in 14994ms
+ ✓ Compiled in 2.1s (762 modules)
+ ○ Compiling /api/trial-info ...
+ ✓ Compiled /api/trial-info in 5.4s (780 modules)
+ ✓ Compiled (782 modules)
+ GET /api/trial-info 200 in 5656ms
+ GET /api/user 200 in 5660ms
+ GET /api/user 200 in 16ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/trial-info 200 in 18ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ ○ Compiling /settings ...
+ ✓ Compiled /settings in 2.2s (1805 modules)
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ ✓ Compiled /api/settings in 221ms (1043 modules)
+ POST /api/settings 200 in 304ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ ○ Compiling /command-center ...
+ ✓ Compiled /command-center in 1096ms (1833 modules)
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ ✓ Compiled /api/daily-log in 361ms (1059 modules)
+ GET /api/daily-log 200 in 419ms
+ GET /api/daily-log 200 in 56ms
+ ✓ Compiled /api/clans in 271ms (1061 modules)
+ GET /api/clans 200 in 333ms
+ ✓ Compiled /api/prestige in 337ms (1064 modules)
+ ✓ Compiled /api/onboarding/complete in 2ms (1064 modules)
+ GET /api/clans 200 in 929ms
+ ✓ Compiled in 1ms (1066 modules)
+ GET /api/prestige 200 in 1512ms
+ POST /api/onboarding/complete 200 in 1034ms
+ ✓ Compiled /api/portfolio in 426ms (1068 modules)
+ GET /api/portfolio 200 in 807ms
+ GET /api/prestige 200 in 777ms
+ GET /api/portfolio 200 in 25ms
+ ✓ Compiled /api/income in 459ms (1070 modules)
+ GET /api/income 200 in 535ms
+ GET /api/income 200 in 41ms
+ GET /api/user 200 in 43ms
+ GET /api/user 200 in 17ms
+ ✓ Compiled /api/trial-check in 250ms (1070 modules)
+ GET /api/trial-check 200 in 449ms
+ ○ Compiling /api/trial-info ...
+ ✓ Compiled /api/trial-info in 661ms (1053 modules)
+ GET /api/trial-info 200 in 709ms
+ ○ Compiling /api/trial-check ...
+ ✓ Compiled /api/trial-check in 612ms (1053 modules)
+ GET /api/trial-check 200 in 653ms
+ ✓ Compiled /api/trial-info in 189ms (1055 modules)
+ GET /api/trial-info 200 in 216ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 264ms
+ ○ Compiling /api/user ...
+ ✓ Compiled /api/user in 775ms (1055 modules)
+ GET /api/user 200 in 1002ms
+ GET /api/trial-info 200 in 856ms
+ GET /api/user 200 in 22ms
+ GET /api/trial-info 200 in 22ms
+ GET /api/trial-info 200 in 7ms
+ GET /api/trial-info 200 in 15ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 124ms
+ GET /api/user 200 in 14ms
+ GET /api/trial-info 200 in 13ms
+ GET /api/user 200 in 17ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/trial-info 200 in 8ms
+ GET /api/trial-info 200 in 10ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 34ms
+ GET /api/trial-info 200 in 14ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET /api/user 200 in 12ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/user 200 in 15ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/trial-info 200 in 11ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 24ms
+ GET /api/trial-info 200 in 18ms
+ GET /api/user 200 in 16ms
+ GET /api/user 200 in 15ms
+ GET /api/trial-info 200 in 12ms
+ GET /api/trial-info 200 in 9ms
+ GET /api/trial-info 200 in 9ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1724ms (1834 modules)
+ GET /membership 404 in 53ms
+ GET /api/user 200 in 25ms
+ GET /api/user 200 in 26ms
+ GET /api/trial-info 200 in 17ms
+ GET /api/trial-info 200 in 11ms
+ GET /api/trial-info 200 in 11ms
+ GET /api/trial-info 200 in 10ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 47ms
+ GET /api/trial-info 200 in 30ms
+ GET /api/user 200 in 27ms
+ GET /api/trial-info 200 in 32ms
+ GET /api/user 200 in 22ms
+ GET /api/trial-info 200 in 21ms
+ GET /api/trial-info 200 in 13ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 159ms
+ GET /api/trial-info 200 in 103ms
+ GET /api/user 200 in 108ms
+ GET /api/trial-info 200 in 67ms
+ GET /api/user 200 in 133ms
+ GET /api/trial-info 200 in 85ms
+ GET /api/trial-info 200 in 54ms
+Middleware trial check error:  [TypeError: fetch failed] {
+  cause:  [Error: C01CA366A87F0000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:../deps/openssl/openssl/ssl/record/methods/tls_common.c:662:
+] {
+  library: 'SSL routines',
+  reason: 'packet length too long',
+  code: 'ERR_SSL_PACKET_LENGTH_TOO_LONG'
+}
+}
+ GET / 200 in 109ms
+ GET /api/trial-info 200 in 60ms
+ GET /api/user 200 in 66ms
+ GET /api/user 200 in 42ms
+ GET /api/trial-info 200 in 46ms
+ GET /api/trial-info 200 in 20ms
+ GET /api/trial-info 200 in 35ms

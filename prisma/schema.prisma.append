@@ -1,0 +1,14 @@
+model ExpenseLog {
+  id           Int      @id @default(autoincrement())
+  userId       String   @map("user_id")
+  amount       Float
+  currency     String   @default("USD")
+  category     String   // e.g., "housing", "food", "transport", "discretionary"
+  notes        String?
+  expenseDate  DateTime @map("expense_date")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("expense_logs")
+}

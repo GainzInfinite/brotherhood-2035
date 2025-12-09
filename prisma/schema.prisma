@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id                 String    @id @default(cuid())
+  name               String?
+  email              String    @unique
+  emailVerified      DateTime? @map("email_verified")
+  password           String?
+  image              String?
+  username           String?
+  location           String?
+  timezone           String?
+  fatherhoodEnabled  Boolean   @default(false) @map("fatherhood_enabled")
+  onboardingComplete Boolean   @default(false) @map("onboarding_complete")
+  welcomePopupShown  Boolean   @default(false) @map("welcome_popup_shown")
+  xp                 Int       @default(0)
+  level              Int       @default(1)
+  prestigeRank       Int       @default(0) @map("prestige_rank")
+  prestigeDate       DateTime? @map("prestige_date")
+  createdAt          DateTime  @default(now()) @map("created_at")
+  updatedAt          DateTime  @updatedAt @map("updated_at")
+  accounts           Account[]
+  sessions           Session[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model DailyLog {
+  id                 Int      @id @default(autoincrement())
+  userId             String   @map("user_id")
+  date               DateTime
+  weight             Float?
+  pushups            Int?
+  steps              Int?
+  bikeMinutes        Int?     @map("bike_minutes")
+  weightTraining     Boolean  @default(false) @map("weight_training")
+  stretching         Boolean  @default(false) @map("stretching")
+  waterIntake        Float?   @map("water_intake")
+  meditationMinutes  Int?     @map("meditation_minutes")
+  studyMinutes       Int?     @map("study_minutes")
+  readingMinutes     Int?     @map("reading_minutes")
+  spendToday         Float?   @map("spend_today")
+  incomeToday        Float?   @map("income_today")
+  savingsToday       Float?   @map("savings_today")
+  fatherhoodPatience Int?     @map("fatherhood_patience")
+  fatherhoodTime     Int?     @map("fatherhood_time")
+  consistencyScore   Int?     @map("consistency_score")
+  isSkipped          Boolean  @default(false) @map("is_skipped")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@unique([userId, date])
+  @@map("daily_logs")
+}
+
+model IncomeLog {
+  id           Int      @id @default(autoincrement())
+  userId       String   @map("user_id")
+  amount       Float
+  currency     String   @default("USD")
+  incomeType   String   @map("income_type")
+  source       String
+  notes        String?
+  receivedDate DateTime @map("received_date")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("income_logs")
+}
+
+model Clan {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  slug        String       @unique
+  description String?
+  createdBy   String       @map("created_by")
+  prestige    Int          @default(0) @map("clan_prestige")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  members     ClanMember[]
+  posts       ClanPost[]
+
+  @@map("clans")
+}
+
+model ClanMember {
+  id       Int      @id @default(autoincrement())
+  clanId   Int      @map("clan_id")
+  userId   String   @unique @map("user_id")
+  role     String
+  joinedAt DateTime @default(now()) @map("joined_at")
+  clan     Clan     @relation(fields: [clanId], references: [id], onDelete: Cascade)
+
+  @@map("clan_members")
+}
+
+model ClanPost {
+  id        Int      @id @default(autoincrement())
+  clanId    Int      @map("clan_id")
+  userId    String   @map("user_id")
+  content   String
+  createdAt DateTime @default(now()) @map("created_at")
+  clan      Clan     @relation(fields: [clanId], references: [id], onDelete: Cascade)
+
+  @@map("clan_posts")
+}
+
+model PortfolioHolding {
+  id          Int      @id @default(autoincrement())
+  userId      String   @map("user_id")
+  assetName   String   @map("asset_name")
+  ticker      String?
+  quantity    Float
+  priceUsd    Float    @map("price_usd")
+  category    String
+  yieldRate   Float?   @map("yield_rate")
+  isApiLinked Boolean  @default(false) @map("is_api_linked")
+  currency    String   @default("USD")
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("portfolio_holdings")
+}
+
+model UserSettings {
+  id                     String    @id @default(cuid())
+  userId                 String    @unique
+  enableFatherhoodModule Boolean   @default(false)
+  onboardingComplete     Boolean   @default(false)
+  currency               String    @default("USD")
+  weightUnit             String    @default("lbs")
+  volumeUnit             String    @default("liters")
+  trialStartDate         DateTime? @map("trial_start_date")
+  trialEndDate           DateTime? @map("trial_end_date")
+  isMember               Boolean   @default(false) @map("is_member")
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  @@map("user_settings")
+}
+
+model JournalEntry {
+  id        Int      @id @default(autoincrement())
+  userId    String   @map("user_id")
+  date      DateTime
+  title     String?
+  content   String
+  mood      String?
+  tags      String   @default("[]")
+  imageUrl  String?  @map("image_url")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+  @@map("journal_entries")
+}

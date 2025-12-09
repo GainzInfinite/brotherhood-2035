@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "npx prisma generate && npm run build",
+  "installCommand": "npm install",
+  "env": {
+    "DATABASE_URL": "file:./dev.db",
+    "AUTH_SECRET": ""
+  }
+}
