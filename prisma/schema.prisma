@@ -199,3 +199,17 @@ model JournalEntry {
   @@unique([userId, date])
   @@map("journal_entries")
 }
+
+model ExpenseLog {
+  id          String   @id @default(cuid())
+  userId      String
+  amount      Float
+  category    String?
+  description String?
+  expenseDate DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([expenseDate])
+}
