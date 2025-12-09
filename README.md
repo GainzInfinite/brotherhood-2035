@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Brotherhood 2035
 
 Elite command center for total life optimization. A dark, masculine self-improvement dashboard for tracking fitness, wealth, habits, journaling, and mindset.
@@ -94,3 +95,6 @@ Each module is ready for implementation. The structure supports:
 ---
 
 **Brotherhood 2035** - Lead yourself. Lead your family. Leave a legacy.
+=======
+# brotherhood-2035
+>>>>>>> 01443c00a1f0b57927c7bad83eb10713ac2c5fcf
