@@ -62,10 +62,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (e) {
-    console.error("SIGNUP ERROR:", e, e?.stack)
+     console.error("SIGNUP ERROR:", e instanceof Error ? e.stack : e);
     return NextResponse.json(
       { error: "Something went wrong" },
-      { status: 500 }
+       
     )
   }
 }
