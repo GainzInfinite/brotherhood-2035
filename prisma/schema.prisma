@@ -57,6 +57,7 @@ model User {
   updatedAt          DateTime  @updatedAt @map("updated_at")
   accounts           Account[]
   sessions           Session[]
+  expenseLogs        ExpenseLog[]
 
   @@map("users")
 }
@@ -201,15 +202,18 @@ model JournalEntry {
 }
 
 model ExpenseLog {
-  id          String   @id @default(cuid())
-  userId      String
-  amount      Float
-  category    String?
-  description String?
-  expenseDate DateTime @default(now())
-
-  user User @relation(fields: [userId], references: [id])
-
-  @@index([userId])
-  @@index([expenseDate])
+  id           Int      @id @default(autoincrement())
+  userId       String   @map("user_id")
+  amount       Float
+  currency     String   @default("USD")
+  category     String   // e.g., "housing", "food", "transport", "discretionary"
+  notes        String?
+  expenseDate  DateTime @map("expense_date")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  user         User     @relation(fields: [userId], references: [id])
+  
+  @@map("expense_logs")
 }
